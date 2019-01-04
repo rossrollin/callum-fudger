@@ -8,7 +8,7 @@ import time
   
 # Replace below path with the absolute path 
 # to chromedriver in your computer 
-driver = webdriver.Chrome('/Users/rosswilliams/Downloads/chromedriver') 
+driver = webdriver.Chrome('/usr/bin/chromedriver') 
 driver.get("https://web.whatsapp.com/") 
 wait = WebDriverWait(driver = driver, timeout = 600)
 
