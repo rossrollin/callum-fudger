@@ -8,7 +8,25 @@ import time
   
 # Replace below path with the absolute path 
 # to chromedriver in your computer 
-driver = webdriver.Chrome('/usr/bin/chromedriver') 
+'''driver = webdriver.Chrome('/usr/bin/chromedriver')
+options = webdriver.ChromeOptions() 
+options.add_argument('--disable-dev-shm-usage')
+options.add_argument('--headless')'''
+
+
+options = webdriver.ChromeOptions()
+options.binary_location='/usr/bin/google-chrome-stable'
+options.add_argument('--headless')
+options.add_argument('--start-maximized') 
+options.add_argument('disable-infobars')
+options.add_argument('--disable-extensions')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+
+driver = webdriver.Chrome('/usr/bin/chromedriver')
+options.add_argument('window-size={}x{}'.format(*driver.window_size))                                                                                                                                                                                                                                                                          
+
+
 driver.get("https://web.whatsapp.com/") 
 wait = WebDriverWait(driver = driver, timeout = 600)
 
